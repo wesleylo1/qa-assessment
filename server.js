@@ -17,9 +17,9 @@ app.use(cors())
 app.use(express.static('public'))
 
 
+rollbar.log('Someone accessed the site')
 
 app.get('/',(req,res) => {
-    rollbar.log('Someone accessed the site')
     res.sendFile(path.join(__dirname, 'public/index.html'))
 })
 
