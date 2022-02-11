@@ -5,16 +5,17 @@ const app = express()
 const {bots, playerRecord} = require('./data')
 const {shuffleArray} = require('./utils')
 
-app.use(express.json())
-app.use(cors())
-app.use(express.static('public'))
-
-var Rollbar = require('rollbar')
-var rollbar = new Rollbar({
+const Rollbar = require('rollbar')
+const rollbar = new Rollbar({
   accessToken: '340f1df26a7f455eb0d3c13b766b0321',
   captureUncaught: true,
   captureUnhandledRejections: true,
 })
+
+app.use(express.json())
+app.use(cors())
+app.use(express.static('public'))
+
 
 
 app.get('/',(req,res) => {
