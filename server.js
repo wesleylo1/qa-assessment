@@ -11,7 +11,7 @@ app.use(express.static('public'))
 
 var Rollbar = require('rollbar')
 var rollbar = new Rollbar({
-  accessToken: process.env.ROLLBAR_TOKEN,
+  accessToken: '340f1df26a7f455eb0d3c13b766b0321',
   captureUncaught: true,
   captureUnhandledRejections: true,
 })
