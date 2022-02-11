@@ -9,7 +9,16 @@ app.use(express.json())
 app.use(cors())
 app.use(express.static('public'))
 
+var Rollbar = require('rollbar')
+var rollbar = new Rollbar({
+  accessToken: process.env.ROLLBAR_TOKEN,
+  captureUncaught: true,
+  captureUnhandledRejections: true,
+})
+
+
 app.get('/',(req,res) => {
+    rollbar.log('Someone accessed the site')
     res.sendFile(path.join(__dirname, 'public/index.html'))
 })
 
