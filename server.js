@@ -7,7 +7,7 @@ const {shuffleArray} = require('./utils')
 
 const Rollbar = require('rollbar')
 const rollbar = new Rollbar({
-  accessToken: '340f1df26a7f455eb0d3c13b766b0321',
+  accessToken: process.env.ROLLBAR_TOKEN,
   captureUncaught: true,
   captureUnhandledRejections: true,
 })
